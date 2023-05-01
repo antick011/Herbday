@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="javascript" type="text/javascript" src="index.js"></script>
+    <style>
+        .slideshow-container {
+            width: 350px;
+            height: 450px;
+            position: relative;
+            margin: auto;
+            align-items: center;
+            align-content: center;
+        }
+        
+        .dot {
+            height: 8px;
+            width: 8px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active {
+            background-color: #717171;
+        }
+        
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+</head>
+<body style="background-color: rgb(46, 28, 63);">
+<div class="cont">
+        <input id="inp" type="text" style="height: 22px; width: 335px; font-size: large;" placeholder="Enter your name...">
+        <br>
+        <button onclick="submit()" id="btn" style="
+        height: 25px; 
+        width: 50px; 
+        background-color: cornflowerblue; 
+        font-size: medium;
+        margin-top: 10px;
+        ">Click</button>
+        <div id="box1" hidden>
+                <h1 style="color: rgba(235, 79, 110, 0.629); font-size: x-large;">Happy Birthday Miss Romanoff</h1>
+                <div class="slideshow-container">
+                <img class="mySlides fade" src="1.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="2.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="3.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="4.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="5.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="6.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="7.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="8.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="9.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="10.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="11.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="12.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="13.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="14.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="15.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="16.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="17.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="18.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="19.jpg" alt="" style="height: 450px; width: 345px;">
+                <img class="mySlides fade" src="20.jpg" alt="" style="height: 450px; width: 345px;">
+                </div>
+                <div style="text-align:center">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                </div>
+               
+        </div>
+</div>
+
+<script>
+
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000);
+        }
+</script>
+
+</body>
+</html>
